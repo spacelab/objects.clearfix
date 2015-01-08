@@ -1,9 +1,13 @@
-%clearfix,
-.clearfix {
-
+@include placeholder(clearfix) {
   &:after {
-    content: "";
     display: table;
     clear: both;
+
+    content: "";
   }
+}
+
+%clearfix,
+.clearfix {
+  @include extend(clearfix);
 }
